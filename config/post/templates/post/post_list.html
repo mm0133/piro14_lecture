@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onClick="location.href='{% url "post:Ucreate" %}'"> 글쓰기</button>
+{% for po in Tposts %}
+    <div>
+    제목:<a href="{% url 'post:Udetail' po.id %}">{{ po.title }}</a><br/>
+    내용:{{ po.content }}<br/>
+    작성자:{{ po.writer.username }}<br/>
+    </div>
+    <br/>
+
+{% endfor %}
+
+</body>
+</html>
